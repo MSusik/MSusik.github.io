@@ -1,0 +1,36 @@
+img {
+  border-radius: 50%;
+  width: 20%; /* you can use % */
+  height: auto;
+}
+
+.panel1 {
+  height: 10vh;
+}
+
+.panel2 {
+  height: 40vh;
+  width: 90%;
+  padding-left: 10%;
+}
+
+.panel3 {
+  height: 40vh;
+}
+
+.panel4 {
+  height: 5vh;
+}
+
+.iconlink > a {
+  color: #fafafa
+}
+
+.iconlink > a:hover {
+  color: #fafafa
+}
+
+.iconlink > a > .fab:hover, .fas:hover { 
+  font-size: 1.2em;
+  transition: 1s ease-out;
+}

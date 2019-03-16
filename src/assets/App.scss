@@ -1,0 +1,52 @@
+.wrap {
+  display: flex;
+  background-image: url('./backs/2.png');
+}
+
+.left {
+  background: linear-gradient(
+    to top,
+    hsla(0, 0%, 0%, 0.5) 0%,
+    hsla(0, 0%, 0%, 0.506) 9.4%,
+    hsla(0, 0%, 0%, 0.524) 17.6%,
+    hsla(0, 0%, 0%, 0.552) 24.8%,
+    hsla(0, 0%, 0%, 0.588) 31.2%,
+    hsla(0, 0%, 0%, 0.63) 37%,
+    hsla(0, 0%, 0%, 0.676) 42.4%,
+    hsla(0, 0%, 0%, 0.725) 47.5%,
+    hsla(0, 0%, 0%, 0.775) 52.5%,
+    hsla(0, 0%, 0%, 0.824) 57.6%,
+    hsla(0, 0%, 0%, 0.87) 63%,
+    hsla(0, 0%, 0%, 0.912) 68.8%,
+    hsla(0, 0%, 0%, 0.948) 75.2%,
+    hsla(0, 0%, 0%, 0.976) 82.4%,
+    hsla(0, 0%, 0%, 0.994) 90.6%,
+    hsl(0, 0%, 0%) 100%
+  );
+  flex-basis: 40%;
+  color: #fafafa;
+}
+
+.left h3 {
+  color: #fafafa;
+  font-size: 1.5em
+}
+
+.left h6 {
+  color: #fafafa
+}
+
+.right {
+  background: #fafafa;
+  flex-basis: 60%;
+  height: 100vh; 
+  overflow: auto;
+}
+
+#app {
+  font-family: Lato;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
