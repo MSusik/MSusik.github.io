@@ -32,7 +32,7 @@
 
         <p/>
 
-        <span>Welcome to my blog on machine learning from various perspectives. I will cover here the math behind ML, interesting publications and ML infrastructure related things.</span>
+        <span>Welcome to my blog on machine learning from various perspectives. I will cover here machine learning, cloud infrastructure and bioinformatics.</span>
 
       </div>
     </section>

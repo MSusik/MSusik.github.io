@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 const env = require('../config/prod.env')
 
@@ -115,7 +116,17 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+
+    // copy imaages
+    new WebpackShellPlugin({
+    	onBuildExit: [
+	    'echo "Copying backgrounds"',
+            'mkdir -p dist/static/css/static/img',
+            'python copyFiles.py',
+            'echo "Files copied successfully"'
+	]
+    })
   ]
 })
 
