@@ -70,7 +70,7 @@ export default {
         while (randImage === this.$store.getters.image) {
           randImage = this.$store.getters.images[Math.floor(Math.random() * this.$store.getters.images.length)]
         }
-        document.getElementsByClassName("wrap")[0].style.background = 'url(\'' + this.$store.getters.base + randImage + '\')'
+        document.getElementsByClassName("bg-left")[0].style.background = 'url(\'' + this.$store.getters.base + randImage + '\')'
         this.$store.commit('changeImage', {image: randImage})
         setTimeout(function() {
           this.$store.commit('changeBackgroundInTransition', {value: false})
@@ -78,7 +78,7 @@ export default {
       }
     }
   },
-  beforeMount: function () {
+  created: function () {
     this.$store.commit('cacheImages')
   }
 }

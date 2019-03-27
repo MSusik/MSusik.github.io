@@ -8,6 +8,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      redirect: '/upmath'
+    },
+    {
       path: '/upmath',
       name: 'Upmath',
       component: Upmath

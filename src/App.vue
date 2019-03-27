@@ -1,7 +1,9 @@
 <template>
   <div class="wrap" id="app">
-    <div class="left">
-      <app-panel></app-panel>
+    <div class="bg-left">
+      <div class="left">
+        <app-panel></app-panel>
+      </div>
     </div>
     <div class="right">
       <app-blog></app-blog>

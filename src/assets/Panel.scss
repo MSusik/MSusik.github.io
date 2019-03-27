@@ -9,12 +9,14 @@
 
 .panel1 {
   height: 10vh;
+  overflow: auto;
 }
 
 .panel2 {
   height: 40vh;
   width: 90%;
   padding-left: 10%;
+  overflow: auto;
 }
 
 .left > main {

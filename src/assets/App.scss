@@ -2,13 +2,33 @@ body {
   margin: 0;
 }
 
-.wrap {
-  display: flex;
-  background: url('./backs/2.png');
+
+@media only screen and (min-width: 768px) {
+  .wrap {
+    display: flex;
+  }
+  .right {
+    height: 100vh;
+    overflow: auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .right {
+    overflow-x: auto;
+  }
+  .bg-left {
+    height: 50%;
+  }
+}
+
+.bg-left {
+  background: url('https://raw.githubusercontent.com/MSusik/msusik.github.io/development/src/assets/backs/2.png');
   transition: 1s;
+  flex-basis: 40%;
 }
 
 .left {
+  height: 100%;
   text-align: center;
   background: linear-gradient(
     to top,
@@ -29,7 +49,6 @@ body {
     hsla(0, 0%, 0%, 0.994) 90.6%,
     hsl(0, 0%, 0%) 100%
   );
-  flex-basis: 40%;
   color: #fafafa;
 }
 
@@ -46,8 +65,6 @@ h6 {
 .right {
   background: #fafafa;
   flex-basis: 60%;
-  height: 100vh; 
-  overflow: auto;
 }
 
 #app {
