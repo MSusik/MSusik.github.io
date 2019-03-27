@@ -1,9 +1,15 @@
+body {
+  margin: 0;
+}
+
 .wrap {
   display: flex;
-  background-image: url('./backs/2.png');
+  background: url('./backs/2.png');
+  transition: 1s;
 }
 
 .left {
+  text-align: center;
   background: linear-gradient(
     to top,
     hsla(0, 0%, 0%, 0.5) 0%,
@@ -32,8 +38,9 @@
   font-size: 1.5em
 }
 
-.left h6 {
-  color: #fafafa !important
+h6 {
+  color: #fafafa !important;
+  font-size: 1em
 }
 
 .right {
@@ -47,6 +54,20 @@
   font-family: Lato;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-leave {}
+
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+  opacity: 0;
 }

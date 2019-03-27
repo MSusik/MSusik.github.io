@@ -1,6 +1,9 @@
-img {
+.avatar {
   border-radius: 50%;
-  width: 20%; /* you can use % */
+  width: 50%; /* you can use % */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   height: auto;
 }
 
@@ -14,11 +17,21 @@ img {
   padding-left: 10%;
 }
 
+.left > main {
+  padding-right: 10%;
+}
+
 .panel3 {
   height: 40vh;
 }
 
+.panel3 > * {
+  list-style: none;
+  text-align: left;
+}
+
 .panel4 {
+  padding-left: 10%;
   height: 5vh;
 }
 
@@ -33,4 +46,13 @@ img {
 .iconlink > a > .fab:hover, .fas:hover { 
   font-size: 1.2em;
   transition: 1s ease-out;
+}
+
+.panel3 > ul > li > a {
+  color: #fafafa;
+}
+
+.panel3 > ul > li > a:hover {
+  color: #fafafa;
+  text-decoration: underline;
 }

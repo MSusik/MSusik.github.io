@@ -7,7 +7,7 @@
       <section>
       <div class="about">
 
-        <div class="avatar"><img src="https://avatars1.githubusercontent.com/u/6649290?s=460&v=4" alt="avatar"></div>
+        <div class="avatar"><img class="avatar" src="https://avatars1.githubusercontent.com/u/6649290?s=460&v=4" alt="avatar"></div>
 
         <h3>Mateusz Susik</h3>
         <h6>Machine learning developer</h6>
@@ -37,7 +37,19 @@
       </div>
     </section>
   </div>
-  <div class="panel3"/>
+  <div class="panel3">
+    <ul><li>
+    <h6>Articles</h6>
+    </li></ul>
+    <ul>
+      <li>
+        <router-link :to="{ name: 'Upmath' }"><span v-on:click="changeRandomlyBackground">Upmath: Math Online Editor</span></router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'About' }"><span v-on:click="changeRandomlyBackground">About Upmath</span></router-link>
+      </li>
+    </ul>
+  </div>
 
   <div class="panel4">
      <small>Design and implementation - Mateusz Susik© 2019</small>
@@ -47,8 +59,28 @@
 </template>
 
 <script>
+
 export default {
-  name: 'Panel'
+  name: 'Panel',
+  methods: {
+    changeRandomlyBackground: function () {
+      if (!this.$store.getters.backgroundInTransition) {
+        this.$store.commit('changeBackgroundInTransition', {value: true})
+        var randImage = this.$store.getters.image
+        while (randImage === this.$store.getters.image) {
+          randImage = this.$store.getters.images[Math.floor(Math.random() * this.$store.getters.images.length)]
+        }
+        document.getElementsByClassName("wrap")[0].style.background = 'url(\'' + this.$store.getters.base + randImage + '\')'
+        this.$store.commit('changeImage', {image: randImage})
+        setTimeout(function() {
+          this.$store.commit('changeBackgroundInTransition', {value: false})
+        }.bind(this), 1000)
+      }
+    }
+  },
+  beforeMount: function () {
+    this.$store.commit('cacheImages')
+  }
 }
 </script>
 
