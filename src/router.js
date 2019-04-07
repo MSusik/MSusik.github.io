@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Upmath from '@/components/articles/Upmath'
-import About from '@/components/articles/About'
+import CudaPart1 from '@/components/articles/CudaPart1'
 
 Vue.use(Router)
 
@@ -9,7 +9,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/upmath'
+      redirect: '/implementing_smith_waterman_on_CUDA_part_1'
     },
     {
       path: '/upmath',
@@ -17,9 +17,9 @@ export default new Router({
       component: Upmath
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About
+      path: '/implementing_smith_waterman_on_CUDA_part_1',
+      name: 'CudaPart1',
+      component: CudaPart1
     }
   ]
 })

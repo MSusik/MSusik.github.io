@@ -8,12 +8,19 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import router from './router'
+import hljs from 'highlight.js/lib/highlight'
+import cpp from 'highlight.js/lib/languages/cpp'
+import 'highlight.js/styles/pojoaque.css'
 
 library.add(faGithub)
+hljs.registerLanguage('cpp', cpp)
+hljs.initHighlightingOnLoad()
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 Vue.use(Vuex)
+
+Object.defineProperty(Vue.prototype, '$hljs', { value: hljs })
 
 const store = new Vuex.Store({
   state: {

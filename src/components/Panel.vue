@@ -43,10 +43,7 @@
     </li></ul>
     <ul>
       <li>
-        <router-link :to="{ name: 'Upmath' }"><span v-on:click="changeRandomlyBackground">Upmath: Math Online Editor</span></router-link>
-      </li>
-      <li>
-        <router-link :to="{ name: 'About' }"><span v-on:click="changeRandomlyBackground">About Upmath</span></router-link>
+        <router-link :to="{ name: 'CudaPart1' }"><span v-on:click="changeRandomlyBackground">Implementing Smith-Waterman algorithm on CUDA. Part 1: C++ implementation</span></router-link>
       </li>
     </ul>
   </div>
@@ -70,15 +67,16 @@ export default {
         while (randImage === this.$store.getters.image) {
           randImage = this.$store.getters.images[Math.floor(Math.random() * this.$store.getters.images.length)]
         }
-        document.getElementsByClassName("bg-left")[0].style.background = 'url(\'' + this.$store.getters.base + randImage + '\')'
+        document.getElementsByClassName('bg-left')[0].style.background = 'url(\'' + this.$store.getters.base + randImage + '\')'
         this.$store.commit('changeImage', {image: randImage})
-        setTimeout(function() {
+        setTimeout(function () {
           this.$store.commit('changeBackgroundInTransition', {value: false})
         }.bind(this), 1000)
       }
     }
   },
   created: function () {
+    this.interval = setInterval(() => this.$store.commit('cacheImages'), 1000)
     this.$store.commit('cacheImages')
   }
 }
